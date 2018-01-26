@@ -1,0 +1,30 @@
+%%%%%%%%%%%%%
+% ECE:3600
+% Homework #1
+% Problem #6
+%%%%%%%%%%%%%
+
+% Clear screen and variables
+clear all
+clc
+
+% Define System 1
+A_1 = [0 1; -2 -3];
+B_1 = [0; 1];
+C_1 = [2 0];
+sys_1 = ss(A_1,B_1,C_1,0);
+
+% Define System 2
+A_2 = [0 1 0; 0 0 1; -6 -11 -6];
+B_2 = [0; 0; 1];
+C_2 = [6 2 0];
+sys_2 = ss(A_2,B_2,C_2,0);
+
+disp('Transfer Function for First System:')
+tf(sys_1)
+
+disp('Transfer Function for Second System:')
+tf(sys_2)
+
+disp('Transfer Function for Second System after 
+minreal(tf(sys_2))
