@@ -31,12 +31,4 @@ pole(System)
 D = s^5 + 21.608*s^4 - 3.4161*s^3 - 146.9644*s^2 - 138.8722*s;
 N = 0.9012*s^4 + 26.2525*s^3 + 149.2205*s^2 + 348.5348*s + 162.0442;
 
-RLSystem = N/D;
-
-RLSystemUnity = feedback(RLSystem,1);
-
-figure(1)
-rlocus(RLSystemUnity)
-sgrid(zeta,0)
-
 %ltiview(RLSystemUnity)

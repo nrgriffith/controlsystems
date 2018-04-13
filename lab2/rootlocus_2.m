@@ -19,8 +19,8 @@ RLSystem = N/D;
 
 figure(1)
 rlocus(RLSystem)
-sgrid(zeta,wn)
+sgrid(zeta,0)
 [Kk,poles]=rlocfind(RLSystem);
 Kk
-RLSystemUnity = feedback(Kk*RLSystem,1);
-step(RLSystemUnity)
+%RLSystemUnity = feedback(Kk*RLSystem,1);
+%step(RLSystemUnity)
