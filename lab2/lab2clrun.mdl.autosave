@@ -114,7 +114,7 @@ Model {
   LastModifiedBy	  "ngriffith"
   ModifiedDateFormat	  "%<Auto>"
   LastModifiedDate	  "Thu Apr 05 16:26:26 2018"
-  RTWModifiedTimeStamp	  445543140
+  RTWModifiedTimeStamp	  445544286
   ModelVersionFormat	  "1.%<AutoIncrement:16>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -226,7 +226,7 @@ Model {
 	  DisabledProps		  []
 	  Description		  ""
 	  StartTime		  "0.0"
-	  StopTime		  "58"
+	  StopTime		  "500"
 	  AbsTol		  "auto"
 	  AutoScaleAbsTol	  "on"
 	  FixedStep		  "auto"
@@ -1276,7 +1276,7 @@ Model {
       "56863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineName"
       "s',{{[]}},'ShowContent',true,'Placement',1)),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',fa"
       "lse,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Version','2018a')),'Version','20"
-      "18a','Location',[166 135 1459 691],'VisibleAtModelOpen','on')"
+      "18a','Location',[166 135 1459 791],'VisibleAtModelOpen','on')"
       NumInputPorts	      "1"
       Floating		      off
     }
