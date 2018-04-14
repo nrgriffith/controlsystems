@@ -16,9 +16,9 @@ N = 0.9012*s^4 + 26.2525*s^3 + 149.2205*s^2 + 348.5348*s + 162.0442;
 RLSystem = N/D;
 
 figure(1)
-rlocus(RLSystem)
-sgrid(zeta,0)
-[Kk,poles]=rlocfind(RLSystem);
-Kk
-%RLSystemUnity = feedback(Kk*RLSystem,1);
-%step(RLSystemUnity)
+%rlocus(RLSystem)
+%sgrid(zeta,0)
+%[Kk,poles]=rlocfind(RLSystem);
+Kk = 28.1
+RLSystemUnity = feedback(Kk*RLSystem,1);
+step(RLSystemUnity)
