@@ -1,6 +1,6 @@
 parameters
 constants
-open_loop
+closed_loop
 
 % Calculations
 s = tf('s');
@@ -10,7 +10,7 @@ sigma = w_n*zeta;
 w_d = w_n*sqrt(1-zeta^2);
 
 figure(1)
-rlocus(Gp)
+rlocus(G*Gf)
 sgrid(zeta,0)
-[K,poles]=rlocfind(Gp);
+[K,poles]=rlocfind(Ga);
 K

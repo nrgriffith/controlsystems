@@ -1,16 +1,6 @@
-% K (change)
-K = 45.7;
-
-% Given parameters
-OS = 0.07;
-t_s = 2.5; % seconds
-t_r = 1.2; % seconds
-
-% Given constants
-k1 = 6.8298;
-k2 = -8.9617;
-k3 = 3.7447;
-k4 = 1;
+parameters
+constants
+closed_loop
 
 % Calculations
 s = tf('s');
@@ -19,14 +9,8 @@ w_n = 4/(t_r*zeta);
 sigma = w_n*zeta;
 w_d = w_n*sqrt(1-zeta^2);
 
-% Open loop transfer functions
-Ga = tf([-3.526 0.007218],[1 11.73 26.96 263.3]);
-Gp = tf([1.53 0.1114 34.59],[1 11.73 26.96 263.3 0]);
-G = K*k1*Gp;
-Gf = Ga/Gp*(k2+k4*s)/k1 + k3*s/k1 + 1;
-
-
-figure(2)
-rlocus(Gp)
+figure(1)
+rlocus(T)
 sgrid(zeta,0)
-%[K,poles]=rlocfind(Gp);
+[K,poles]=rlocfind(Ga);
+%K
