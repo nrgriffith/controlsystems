@@ -1,24 +1,28 @@
-load data/k30.mat
+K = 23;
 
-anglex = data_ang(:,1) - 20;
-vmx = data_Vm(:,1) - 20;
-xcx = data_xc(:,1) - 20;
+file = strcat('data/k',num2str(K));
+file = strcat(file,'.mat');
 
-figure(1)
-subplot(3,1,1);
-plot(anglex,data_ang(:,2))
-ylabel('Radian Degrees')
-title('Gain (K = 30)')
+load(file)
 
-subplot(3,1,2);
-plot(vmx,data_Vm(:,2))
-ylabel('Command Volatage (Volts)')
-
-subplot(3,1,3);
-plot(xcx,data_xc(:,2))
-ylabel('Position (mm)')
-xlabel('Time (seconds)')
+anglex = data_ang(:,1);
+vmx = data_Vm(:,1);
+xcx = data_xc(:,1);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-plot(anglex,data_ang(:,2)),ylabel('Angle (Radians)'),xlabel('Time (seconds)'),title('Angle Variation (Gain K = 30)')
+constants
+open_loop
+closed_loop
+
+% Generate Square Wave
+[u,t]=gensig('square',10,20,0.1);
+
+% Simulate
+[simy, simt] = lsim(T,u,t);
+
+figure(1)
+plot(anglex,data_ang(:,2)),ylabel('Angle (Radians)'),xlabel('Time (seconds)'),title(['Angle Variation (Gain K = ' num2str(K) ')'])
+
+figure(2)
+plot(simt,simy(:,2),'--k')

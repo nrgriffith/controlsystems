@@ -4,4 +4,4 @@ closed_loop
 [u,t]=gensig('square',10,20,0.1);
 
 % Simulate
-[simy, simt, simx] = lsim(T,u,t)
+[simy, simt] = lsim(T,u,t);
