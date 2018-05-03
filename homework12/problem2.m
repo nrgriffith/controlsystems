@@ -1,21 +1,29 @@
 % Homework 12
 % Problem 2 (Nise 11.7)
 
-%%%%%%%%%%%%%%%%%%% Get Bode plot %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% Solved Parameters %%%%%%%%%%%%%%%%%
+Zc = 0.3;
+Pc = 0.0045;
+Kc = Pc/Zc*5;
 
-K = 1;
-
+%%%%%%%%%%%%%%%%% Given  Parameters %%%%%%%%%%%%%%%%%
+overshoot = 0.15;
+zeta = -1*log(.15)/sqrt(3.1415926^2+(log(.15))^2);
 s = tf('s');
 
-G = 1/((s+1)*(s+5)*(s+10));
+G = 140/((s+1)*(s+5)*(s+10));
 
+% rlocus(G)
+% zgrid(zeta,0)
+
+%%%%%%%%%%%%%%%%%%% Get Bode plot %%%%%%%%%%%%%%%%%%%
 figure(1)
 bode(G)
 grid
 
-% Gc = K*G;
-% Gc = feedback(Gc,1);
+Gc = Kc*(s+Zc)/(s+Pc);
+Sys = feedback((Gc*G),1);
 
-% figure(2)
-% step(Gc)
-% title(['Compensated System Step Response (K =' num2str(K) ')'])
+figure(2)
+step(Sys)
+title(['Compensated System Step Response'])
